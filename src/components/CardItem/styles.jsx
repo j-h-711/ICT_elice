@@ -30,7 +30,7 @@ export const Category = styled.p`
 
 export const Title = styled.h3`
   font-size: 0.8rem;
-  height: 20%;
+  height: 15%;
   padding: 0 1rem;
   margin: 0 !important;
 
@@ -43,7 +43,7 @@ export const Title = styled.h3`
 
 export const Content = styled.div`
   font-size: 0.8rem;
-  height: 35%;
+  height: 40%;
   padding: 1rem;
   padding-top: 0.1rem;
 `;
@@ -60,16 +60,46 @@ export const ContentText = styled.p`
   white-space: normal;
 `;
 
-export const Price = styled.p`
-  font-size: 0.9rem;
-  font-weight: bold;
+export const Price = styled.div`
+  // font-size: 0.9rem;
+  // font-weight: bold;
   border-top: 1px solid #ccc;
   height: 5%;
   padding: 1rem;
   display: flex;
-  display: flex;
   flex-direction: row;
+  // margin-top: auto;
+  // margin-bottom: auto;
+  // color: ${({ isfree }) => (isfree === true ? "green" : "black")};
+  // font-size: 0.9rem;
+`;
+
+export const TotalPrice = styled.p`
   margin-top: auto;
   margin-bottom: auto;
-  color: ${({ isfree }) => (isfree === true ? "green" : "#524fA1")};
+  color: ${({ isfree }) => (isfree === true ? "green" : "black")};
+  font-size: 0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+`;
+
+export const OrinalPrice = styled.p`
+  text-decoration: line-through;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 0.5rem;
+  color: lightgrey;
+  font-weight: lighter;
+  font-size: 0.7rem;
+`;
+
+export const DiscountPer = styled.p`
+  color: red;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
 `;

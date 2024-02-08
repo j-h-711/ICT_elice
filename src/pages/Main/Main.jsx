@@ -62,17 +62,38 @@ const Main = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const filterConditions = {
-          $and: [
-            { title: keyword !== "" ? "%{keyword}%" : "%%" },
-            {
-              $or: [
-                { enroll_type: 0, is_free: true },
-                { enroll_type: 0, is_free: true },
-              ],
-            },
-          ],
-        };
+        let filterConditions = {};
+        if (filter[0] === "isfree" && filter.length === 1) {
+          filterConditions = {
+            $and: [
+              { title: keyword !== "" ? `%${keyword}%` : "%%" },
+              {
+                $or: [{ enroll_type: 0, is_free: true }],
+              },
+            ],
+          };
+        } else if (filter[0] === "paid" && filter.length === 1) {
+          filterConditions = {
+            $and: [
+              { title: keyword !== "" ? `%${keyword}%` : "%%" },
+              {
+                $or: [{ enroll_type: 0, is_free: false }],
+              },
+            ],
+          };
+        } else {
+          filterConditions = {
+            $and: [
+              { title: keyword !== "" ? `%${keyword}%` : "%%" },
+              {
+                $or: [
+                  { enroll_type: 0, is_free: true },
+                  { enroll_type: 0, is_free: false },
+                ],
+              },
+            ],
+          };
+        }
 
         // offset으로 페이지 단위 설정
         // offset = 0 이 1페이지
@@ -99,14 +120,18 @@ const Main = () => {
     };
 
     fetchCards();
-  }, [page]);
+  }, [page, filter, keyword, price]);
 
   return (
     <MainWrapper>
       <Header />
       <Container>
-        <SearchBar />
-        <FilterBar filter={filter} handleOptionClick={handleOptionClick} />
+        <SearchBar filter={filter} page={page} />
+        <FilterBar
+          filter={filter}
+          handleOptionClick={handleOptionClick}
+          search={keyword}
+        />
         <Cards cards={cards} courseCount={courseCount} />
         {courseCount > 20 && (
           <Pagination

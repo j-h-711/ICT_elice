@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import {
   Container,
   Price,
@@ -7,7 +8,13 @@ import {
   FilterBarWrapper,
 } from "./styles";
 
-export const FilterBar = ({ filter, handleOptionClick }) => {
+export const FilterBar = ({ filter, handleOptionClick, search }) => {
+  const navigate = useNavigate();
+
+  const handleFilterClick = (search) => {
+    navigate(`?price=${filter[0]}&keyword=${search}&page=${1}`);
+  };
+
   return (
     <FilterBarWrapper>
       <Container>

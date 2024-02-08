@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, SearchInput, SearchBtn, SearchBarWrapper } from "./styles";
 
-export const SearchBar = () => {
+export const SearchBar = ({ filter, page }) => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
+
+  const handleKeyword = (search) => {
+    navigate(`?price=${filter[0]}&keyword=${search}&page=${1}`);
+  };
 
   // 검색어 onChange
   const handleSearchChange = (e) => {
@@ -13,6 +19,7 @@ export const SearchBar = () => {
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       setSearch(e.target.value);
+      handleKeyword(search);
       e.target.value = "";
     }
   };
