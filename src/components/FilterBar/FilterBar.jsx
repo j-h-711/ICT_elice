@@ -7,32 +7,21 @@ import {
   FilterBarWrapper,
 } from "./styles";
 
-export const FilterBar = () => {
-  const [filter, setFilter] = useState([]);
-
-  // 옵션 아이템 클릭 이벤트 핸들러
-  const handleOptionClick = (option) => {
-    if (filter.includes(option)) {
-      setFilter(filter.filter((item) => item !== option));
-    } else {
-      setFilter([...filter, option]);
-    }
-  };
-
+export const FilterBar = ({ filter, handleOptionClick }) => {
   return (
     <FilterBarWrapper>
       <Container>
         <Price>가격</Price>
         <Options>
           <OptionItem
-            onClick={() => handleOptionClick("free")}
-            selected={filter.includes("free")}
+            onClick={() => handleOptionClick("isfree")}
+            selected={filter.includes("isfree")}
           >
             무료
           </OptionItem>
           <OptionItem
-            onClick={() => handleOptionClick("pay")}
-            selected={filter.includes("pay")}
+            onClick={() => handleOptionClick("paid")}
+            selected={filter.includes("paid")}
           >
             유료
           </OptionItem>

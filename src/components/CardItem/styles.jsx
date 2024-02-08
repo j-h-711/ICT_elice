@@ -9,7 +9,7 @@ export const CardWrapper = styled.div`
   margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  height: auto;
+  height: 23rem;
 `;
 
 export const ContentImg = styled.img`
