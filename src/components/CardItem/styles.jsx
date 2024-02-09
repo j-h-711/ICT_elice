@@ -5,11 +5,17 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 23%;
+  width: 22%;
   margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  height: 23rem;
+  height: 22rem;
+
+  margin-right: 3.75%; /* 각 카드 오른쪽 여백 */
+
+  &:nth-child(4n) {
+    margin-right: 0 !important;
+  }
 `;
 
 export const ContentImg = styled.img`
@@ -61,8 +67,6 @@ export const ContentText = styled.p`
 `;
 
 export const Price = styled.div`
-  // font-size: 0.9rem;
-  // font-weight: bold;
   border-top: 1px solid #ccc;
   height: 5%;
   padding: 1rem;

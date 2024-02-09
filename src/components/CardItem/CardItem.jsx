@@ -21,6 +21,7 @@ export const Cards = ({
   price,
   image,
   discountRate,
+  index,
 }) => {
   const imageUrl = image === null ? "images/contentImgNull.png" : image;
   const discountPrice = price * (1 - discountRate);

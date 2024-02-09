@@ -35,7 +35,7 @@ export const SearchBar = ({ filter, page }) => {
 
   return (
     <SearchBarWrapper>
-      <Container focused={focused}>
+      <Container focused={focused ? "true" : "false"}>
         <SearchBtn src="/images/searchBtn.png" alt="searchBtn"></SearchBtn>
         <SearchInput
           placeholder="배우고 싶은 언어, 기술을 검색해보세요"

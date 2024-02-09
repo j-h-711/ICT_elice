@@ -16,3 +16,8 @@ export const Container = styled.div`
   width: 70%;
   margin: 0 auto;
 `;
+
+export const NoPages = styled.div`
+  height: 8rem;
+  background-color: lightgray;
+`;

@@ -7,7 +7,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import Pagination from "../../components/Pagination/Pagination";
 import Cards from "../../components/Cards/Cards";
-import { MainWrapper, Container } from "./styles";
+import { MainWrapper, Container, NoPages } from "./styles";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -134,7 +134,7 @@ const Main = () => {
           search={keyword}
         />
         <Cards cards={cards} courseCount={courseCount} />
-        {courseCount > 20 && (
+        {courseCount > 20 ? (
           <Pagination
             totalPages={Math.floor(courseCount / 20) + 1}
             currentPage={page}
@@ -142,6 +142,8 @@ const Main = () => {
             goToNextPage={goToNextPage}
             goToPage={goToPage}
           />
+        ) : (
+          <NoPages />
         )}
       </Container>
       <Footer />

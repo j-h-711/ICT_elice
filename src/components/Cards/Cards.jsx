@@ -24,6 +24,7 @@ export const Cards = ({ cards, courseCount }) => {
               price={card.price}
               image={card.image_file_url}
               discountRate={card.discount_rate}
+              index={card.index}
             />
           ))}
         </ClassCardsContainer>
