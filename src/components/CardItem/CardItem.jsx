@@ -23,8 +23,8 @@ export const Cards = ({
   discountRate,
 }) => {
   const imageUrl = image === null ? "images/contentImgNull.png" : image;
-  const discountPrice =
-    price === "0" ? "무료" : `${price * (1 - discountRate)} 원`;
+  const discountPrice = price * (1 - discountRate);
+  const formatedOriginalPrice = new Intl.NumberFormat("en-US").format(price);
 
   return (
     <CardWrapper>
@@ -35,12 +35,16 @@ export const Cards = ({
         <ContentText>{content}</ContentText>
       </Content>
       <Price>
-        <TotalPrice isfree={isfree}>{discountPrice}</TotalPrice>
+        <TotalPrice isfree={isfree}>
+          {discountPrice === 0
+            ? "무료"
+            : `${new Intl.NumberFormat("en-US").format(discountPrice)} 원`}
+        </TotalPrice>
         {price === "0" ? (
           <></>
         ) : (
           <>
-            <OrinalPrice>{price} 원</OrinalPrice>
+            <OrinalPrice>{formatedOriginalPrice} 원</OrinalPrice>
             <DiscountPer>{discountRate * 100}%</DiscountPer>
           </>
         )}

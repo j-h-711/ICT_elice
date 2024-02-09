@@ -8,7 +8,8 @@ export const Container = styled.div`
   margin-top: 52px;
   display: flex;
   flex-direction: row;
-  border: 1px solid rgb(201, 202, 204);
+  border: 2px solid
+    ${({ focused }) => (focused ? "#524FA1" : "rgb(201, 202, 204)")};
   border-radius: 0.25rem;
   height: 40px;
   justify-content: space-between;
@@ -20,7 +21,6 @@ export const Container = styled.div`
 export const SearchInput = styled.input`
   border: none;
   width: calc(100% - 60px);
-  margin-top: 
 
   &:focus {
     outline: none;

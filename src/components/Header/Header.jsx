@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Navbar,
@@ -11,13 +12,21 @@ import {
 } from "./styles";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const handleAllClick = () => {
+    navigate(`?price=${undefined}&keyword=${""}&page=${1}`);
+  };
+
   return (
     <Container>
       <Navbar>
         <Logo src="/images/logo.png" alt="Logo" />
         <NavItemContainer>
           <NavItem href="#">홈</NavItem>
-          <NavItem href="#">전체강의</NavItem>
+          <NavItem href="#" onClick={() => handleAllClick()}>
+            전체강의
+          </NavItem>
           <NavItem href="#">💰 선환급챌린지</NavItem>
           <NavItem href="#">🌎 플루럴사이트</NavItem>
           <NavItem href="#">클라우드</NavItem>

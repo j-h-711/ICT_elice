@@ -43,12 +43,24 @@ export const Footer = () => {
         <FooterContent>
           <FooterTop>
             <FooterNav>
-              <FooterNavItem href="#">회사 소개</FooterNavItem>
-              <FooterNavItem href="#">서비스 이용약관</FooterNavItem>
+              <FooterNavItem href="https://elice.io/ko" target="_blank">
+                회사 소개
+              </FooterNavItem>
+              <FooterNavItem
+                href="https://legal.elice.io/policies/terms/2023-05-01"
+                target="_blank"
+              >
+                서비스 이용약관
+              </FooterNavItem>
               <FooterNavItem href="#" style={{ fontWeight: "bold" }}>
                 개인정보처리방침
               </FooterNavItem>
-              <FooterNavItem href="#">업데이트 소식</FooterNavItem>
+              <FooterNavItem
+                href="https://elice.notion.site/644e6af17741452db3263f72dd5876a2"
+                target="_blank"
+              >
+                업데이트 소식
+              </FooterNavItem>
               <FooterNavItem href="#">
                 <ServiceState>🟢</ServiceState>
                 서비스 상태

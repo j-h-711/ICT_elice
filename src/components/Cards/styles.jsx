@@ -27,4 +27,8 @@ export const ClassCardsContainer = styled.div`
 export const CardItemWrapper = styled.div`
   width: calc(25% - 20px);
   margin-bottom: 1rem;
+  // margin-right: 20px; /* 각 카드 오른쪽 여백 */
+  // &:nth-child(4n) {
+  //   margin-right: 0; /* 4번째 카드의 오른쪽 여백 제거 */
+  }
 `;

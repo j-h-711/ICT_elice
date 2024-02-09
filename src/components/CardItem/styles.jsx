@@ -68,10 +68,6 @@ export const Price = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: row;
-  // margin-top: auto;
-  // margin-bottom: auto;
-  // color: ${({ isfree }) => (isfree === true ? "green" : "black")};
-  // font-size: 0.9rem;
 `;
 
 export const TotalPrice = styled.p`

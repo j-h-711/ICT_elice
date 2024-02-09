@@ -18,7 +18,6 @@ const Main = () => {
   const [courseCount, setCourseCount] = useState(0);
 
   const page = Number(new URLSearchParams(location.search).get("page")) || 1;
-  const price = Number(new URLSearchParams(location.search).get("price")) || 0;
   const keyword = new URLSearchParams(location.search).get("keyword") || "";
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,24 +28,25 @@ const Main = () => {
   const handleOptionClick = (option) => {
     if (filter.includes(option)) {
       setFilter(filter.filter((item) => item !== option));
-      navigate(`?price=${filter[0]}&keyword=${keyword}&page=${page}`);
     } else {
       setFilter([...filter, option]);
-      navigate(`?price=${filter[0]}&keyword=${keyword}&page=${page}`);
     }
   };
+  useEffect(() => {
+    navigate(`?price=${filter.join(",")}&keyword=${keyword}&page=${1}`);
+  }, [filter, keyword]);
 
   // 이전 페이지로 이동하는 함수
   const goToPrevPage = () => {
     const prevPage = page - 1;
-    navigate(`?price=${filter[0]}&keyword=${keyword}&page=${prevPage}`);
+    navigate(`?price=${filter.join(",")}&keyword=${keyword}&page=${prevPage}`);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   // 다음 페이지로 이동하는 함수
   const goToNextPage = () => {
     const nextPage = page + 1;
-    navigate(`?price=${filter[0]}&keyword=${keyword}&page=${nextPage}`);
+    navigate(`?price=${filter.join(",")}&keyword=${keyword}&page=${nextPage}`);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
@@ -55,7 +55,9 @@ const Main = () => {
     // if (searchTerm) {
     //   refetch();
     // }
-    navigate(`?price=${filter[0]}&keyword=${keyword}&page=${targetPage}`);
+    navigate(
+      `?price=${filter.join(",")}&keyword=${keyword}&page=${targetPage}`
+    );
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
@@ -113,14 +115,13 @@ const Main = () => {
 
         setCards(data.courses);
         setCourseCount(data.course_count);
-        console.log(data);
       } catch (error) {
         console.error("API 요청 에러:", error);
       }
     };
 
     fetchCards();
-  }, [page, filter, keyword, price]);
+  }, [page, filter, keyword]);
 
   return (
     <MainWrapper>
