@@ -9,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   border: 2px solid
-    ${({ focused }) => (focused ? "#524FA1" : "rgb(201, 202, 204)")};
+    ${({ focused }) => (focused === "true" ? "#524FA1" : "rgb(201, 202, 204)")};
   border-radius: 0.25rem;
   height: 40px;
   justify-content: space-between;

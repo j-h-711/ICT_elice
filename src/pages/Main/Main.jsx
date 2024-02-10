@@ -125,7 +125,7 @@ const Main = () => {
 
   return (
     <MainWrapper>
-      <Header />
+      <Header setFilter={setFilter} />
       <Container>
         <SearchBar filter={filter} page={page} />
         <FilterBar

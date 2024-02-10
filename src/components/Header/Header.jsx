@@ -11,10 +11,11 @@ import {
   DashImg,
 } from "./styles";
 
-export const Header = () => {
+export const Header = ({ setFilter }) => {
   const navigate = useNavigate();
 
   const handleAllClick = () => {
+    setFilter([]);
     navigate(`?price=${undefined}&keyword=${""}&page=${1}`);
   };
 
