@@ -4,12 +4,12 @@ export const SearchBarWrapper = styled.div`
   background-color: lightgrey;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ focused: boolean }>`
   margin-top: 52px;
   display: flex;
   flex-direction: row;
   border: 2px solid
-    ${({ focused }) => (focused === "true" ? "#524FA1" : "rgb(201, 202, 204)")};
+    ${({ focused }) => (focused ? "#524FA1" : "rgb(201, 202, 204)")};
   border-radius: 0.25rem;
   height: 40px;
   justify-content: space-between;

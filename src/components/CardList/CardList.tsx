@@ -8,7 +8,24 @@ import {
   ClassCardsContainer,
 } from "./styles";
 
-export const Cards = ({ cards, courseCount }) => {
+interface Cards {
+  id: number;
+  category: string;
+  title: string;
+  short_description: string;
+  isfree: boolean;
+  price: string;
+  image_file_url: string | null;
+  discount_rate: string;
+  index: number;
+}
+
+interface CardsProps {
+  cards: Cards[];
+  courseCount: number;
+}
+
+const CardList: React.FC<CardsProps> = ({ cards, courseCount }) => {
   return (
     <CardWrapper>
       <Container>
@@ -33,4 +50,4 @@ export const Cards = ({ cards, courseCount }) => {
   );
 };
 
-export default Cards;
+export default CardList;

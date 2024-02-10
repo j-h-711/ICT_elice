@@ -68,17 +68,3 @@ export const ServiceState = styled.p`
   margin-right: 6px;
   font-size: 6px;
 `;
-
-export const FooterModal = styled.div`
-  position: absolute;
-  top: ${({ top }) => top}px;
-  left: ${({ left }) => left}px;
-  transform: translateX(-50%);
-  background-color: lightgray;
-  color: black;
-  padding: 20px;
-  z-index: 9999;
-  border-radius: 8px;
-  display: ${({ isOpen }) =>
-    isOpen ? "block" : "none"}; /* isOpen 상태에 따라 보이거나 숨김 */
-`;

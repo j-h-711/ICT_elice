@@ -38,7 +38,7 @@ export const Options = styled.div`
   padding-left: 2%;
 `;
 
-export const OptionItem = styled.button`
+export const OptionItem = styled.button<{ selected: boolean }>`
   border: none;
   font-size: 12px;
   background-color: ${({ selected }) => (selected ? "#5E4FA1" : "#F0F1F3")};

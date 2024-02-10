@@ -3,12 +3,12 @@ import Main from "./pages/Main/Main";
 
 import "./App.css";
 
-function App() {
+export const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
     </Routes>
   );
-}
+};
 
 export default App;

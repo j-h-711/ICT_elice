@@ -8,7 +8,17 @@ import {
   FilterBarWrapper,
 } from "./styles";
 
-export const FilterBar = ({ filter, handleOptionClick, search }) => {
+interface FilterBarProps {
+  filter: string[];
+  handleOptionClick: (option: string) => void;
+  search: string;
+}
+
+const FilterBar: React.FC<FilterBarProps> = ({
+  filter,
+  handleOptionClick,
+  search,
+}) => {
   return (
     <FilterBarWrapper>
       <Container>

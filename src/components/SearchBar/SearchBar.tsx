@@ -2,40 +2,47 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, SearchInput, SearchBtn, SearchBarWrapper } from "./styles";
 
-export const SearchBar = ({ filter, page }) => {
-  const navigate = useNavigate();
-  const [search, setSearch] = useState("");
-  const [focused, setFocused] = useState(false);
+interface SearchBarProps {
+  filter: string[];
+  page: number;
+}
 
+const SearchBar: React.FC<SearchBarProps> = ({ filter, page }) => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState<string>("");
+  const [focused, setFocused] = useState<boolean>(false);
+
+  // 검색창에 포커스
   const handleFocus = () => {
     setFocused(true);
   };
 
+  // 검색창에서 포커스 아웃
   const handleBlur = () => {
     setFocused(false);
   };
 
-  const handleKeyword = (search) => {
+  // handleEnter에서 사용할 url 페이지 이동 함수
+  const handleKeyword = (search: string) => {
     navigate(`?price=${filter[0]}&keyword=${search}&page=${1}`);
   };
 
   // 검색어 onChange
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
   // 검색 Enter
-  const handleEnter = (e) => {
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setSearch(e.target.value);
       handleKeyword(search);
-      e.target.value = "";
+      setSearch("");
     }
   };
 
   return (
     <SearchBarWrapper>
-      <Container focused={focused ? "true" : "false"}>
+      <Container focused={focused}>
         <SearchBtn src="/images/searchBtn.png" alt="searchBtn"></SearchBtn>
         <SearchInput
           placeholder="배우고 싶은 언어, 기술을 검색해보세요"

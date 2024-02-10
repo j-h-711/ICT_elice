@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CardItem from "../CardItem/CardItem";
 import {
   CardWrapper,
   Title,
@@ -13,7 +12,18 @@ import {
   TotalPrice,
 } from "./styles";
 
-export const Cards = ({
+interface CardItemProps {
+  category: string;
+  title: string;
+  content: string;
+  isfree: boolean;
+  price: string;
+  image: string | null;
+  discountRate: string;
+  index: number;
+}
+
+export const CardItem: React.FC<CardItemProps> = ({
   category,
   title,
   content,
@@ -23,10 +33,16 @@ export const Cards = ({
   discountRate,
   index,
 }) => {
-  const imageUrl = image === null ? "images/contentImgNull.png" : image;
-  const discountPrice = price * (1 - discountRate);
-  const formatedOriginalPrice = new Intl.NumberFormat("en-US").format(price);
+  const ORIGIMAL_PRICE: number = parseInt(price);
+  const DISCOUNT_RATE: number =
+    discountRate === null ? 0 : parseFloat(discountRate);
 
+  const imageUrl: string | null =
+    image === null ? "images/contentImgNull.png" : image;
+  const discountPrice = ORIGIMAL_PRICE * (1 - DISCOUNT_RATE);
+  const formatedOriginalPrice = new Intl.NumberFormat("en-US").format(
+    ORIGIMAL_PRICE
+  );
   return (
     <CardWrapper>
       <ContentImg src={imageUrl}></ContentImg>
@@ -36,17 +52,17 @@ export const Cards = ({
         <ContentText>{content}</ContentText>
       </Content>
       <Price>
-        <TotalPrice isfree={isfree}>
-          {discountPrice === 0
+        <TotalPrice price={ORIGIMAL_PRICE}>
+          {ORIGIMAL_PRICE === 0
             ? "무료"
             : `${new Intl.NumberFormat("en-US").format(discountPrice)} 원`}
         </TotalPrice>
-        {price === "0" ? (
+        {ORIGIMAL_PRICE === 0 ? (
           <></>
         ) : (
           <>
             <OrinalPrice>{formatedOriginalPrice} 원</OrinalPrice>
-            <DiscountPer>{discountRate * 100}%</DiscountPer>
+            <DiscountPer>{DISCOUNT_RATE * 100}%</DiscountPer>
           </>
         )}
       </Price>
@@ -54,4 +70,4 @@ export const Cards = ({
   );
 };
 
-export default Cards;
+export default CardItem;

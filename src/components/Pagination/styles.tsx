@@ -9,7 +9,26 @@ export const Container = styled.div`
   background-color: lightgrey;
 `;
 
-export const PageButton = styled.button`
+export const PageMoveButton = styled.button<{ active: boolean }>`
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  margin: 0 0.2rem;
+  background-color: white;
+  color: ${(props) => (props.active ? "grey" : "black")};
+
+  border: none;
+
+  background-color: lightgray;
+
+  &:hover {
+    color: #524fa1;
+  }
+`;
+
+export const PageButton = styled.button<{ active: boolean }>`
   font-size: 1rem;
   border-radius: 8px;
   width: 30px;

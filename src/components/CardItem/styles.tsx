@@ -74,10 +74,10 @@ export const Price = styled.div`
   flex-direction: row;
 `;
 
-export const TotalPrice = styled.p`
+export const TotalPrice = styled.p<{ price: number }>`
   margin-top: auto;
   margin-bottom: auto;
-  color: ${({ isfree }) => (isfree === true ? "green" : "black")};
+  color: ${({ price }) => (price === 0 ? "green" : "black")};
   font-size: 0.9rem;
   font-size: 0.9rem;
   font-weight: bold;

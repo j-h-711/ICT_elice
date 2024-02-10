@@ -11,14 +11,11 @@ import {
   DashImg,
 } from "./styles";
 
-export const Header = ({ setFilter }) => {
-  const navigate = useNavigate();
+interface HeaderProps {
+  handleAllClick: () => void;
+}
 
-  const handleAllClick = () => {
-    setFilter([]);
-    navigate(`?price=${undefined}&keyword=${""}&page=${1}`);
-  };
-
+export const Header: React.FC<HeaderProps> = ({ handleAllClick }) => {
   return (
     <Container>
       <Navbar>
