@@ -51,8 +51,10 @@
 - Pagination 컴포넌트
 
 1. 컴포넌트 구성
+   <br/>
    ![페이지네이션](https://github.com/j-h-711/ICT_elice/assets/106228604/01c51687-4ba0-4848-92cb-3b143f1b3b09) <br/>
 2. 사용 함수
+   <br/>
    ![페이지네이션 사용 함수](https://github.com/j-h-711/ICT_elice/assets/106228604/adb8d029-7072-4cf6-8411-b8d7b6192da7) <br/>
    라이브러리 사용 없이 페이지네이션 처리
    현재 페이지, 총 페이지수, 다음페이지 이동 함수, 전 페이지 이동 함수, 해당 페이지로 이동 함수
@@ -64,6 +66,7 @@
 1. 페이지, 필터링
    <br/>
    ![페이지, 필터, 키워드 조작](https://github.com/j-h-711/ICT_elice/assets/106228604/89cd0d4f-1f69-45dc-84ec-91b546ac59b9)
+   <br/>
    현재페이지와 키워드는 URL Params을 사용
    유료 / 무료 / 유료+무료 필터링은 조건이 변경될 때 문자열로 구성된 배열 형태로 관리
    검색어나 무료/유료 필터가 변경되면 결과의 1페이지로 이동
@@ -71,6 +74,7 @@
 2. 검색어 필터링 조작
    <br/>
    ![검색어 필터링](https://github.com/j-h-711/ICT_elice/assets/106228604/3e640f42-ce8b-4e62-8824-4b1ba502ce7b)
+   <br/>
    검색어를 입력받아 URL Params로 담아 이동
 
 - styled-components 사용
