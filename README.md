@@ -43,7 +43,9 @@
 
   <br/>
   <br/>
+
   - 검색창 포커싱
+
   ![검색창 포커싱](https://github.com/j-h-711/ICT_elice/assets/106228604/b0193efa-8554-4169-bd83-0cd2f9f0f5fc)
 
 ## 주요 코드
