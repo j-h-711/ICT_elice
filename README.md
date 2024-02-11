@@ -50,6 +50,7 @@
 
 <br/>
 - api 서버 통신
+<br/>
   AXIOS 라이브러리 활용 async/await 비동기 통신
   
   ![api 통신](https://github.com/j-h-711/ICT_elice/assets/106228604/09412a61-b830-4ed0-b21e-85b3015b5717) <br/>
@@ -61,6 +62,7 @@
 <br/>
 <br/>
 - Main 페이지 컴포넌트
+<br/>
 
 ![Main 페이지 컴포넌트](https://github.com/j-h-711/ICT_elice/assets/106228604/f32ca5f7-bcef-4c73-aa07-65426506f41a)
 Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
@@ -70,6 +72,7 @@ Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
 <br/>
 <br/>
 - Pagination 컴포넌트
+<br/>
 
 1. 컴포넌트 구성
    <br/>
@@ -85,6 +88,7 @@ Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
 <br/>
 <br/>
 - 페이지, 키워드 필터, 무료/유료 필터 적용
+<br/>
 
 1. 페이지, 필터링
    <br/>
@@ -103,6 +107,7 @@ Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
 <br/>
 <br/>
 - styled-components 사용
+<br/>
 
 ![styled-components 사용](https://github.com/j-h-711/ICT_elice/assets/106228604/0154bfca-864a-4425-b68a-ade50357119e)
 styled-components를 사용한 컴포넌트 기반 스타일링
