@@ -43,6 +43,7 @@
 <br/>
 - api 서버 통신
   AXIOS 라이브러리 활용 async/await 비동기 통신
+  
   ![api 통신](https://github.com/j-h-711/ICT_elice/assets/106228604/09412a61-b830-4ed0-b21e-85b3015b5717) <br/>
   GET 요청 endpoint에 Params로 filter_conditions를 담아 요청<br/>
   응답으로 받은 데이터로 전체 강의와 전체 강의 수를 상태 변수로 관리<br/>
@@ -52,11 +53,12 @@
 <br/>
 <br/>
 - Main 페이지 컴포넌트
-  ![Main 페이지 컴포넌트](https://github.com/j-h-711/ICT_elice/assets/106228604/f32ca5f7-bcef-4c73-aa07-65426506f41a)
-  Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
-  재사용 가능한 단위로 구성된 컴포넌트들로 메인페이지 컴포넌트 구성<br/>
-  필터링, 페이지네이션, GET요청 주요함수 위치
- 
+
+![Main 페이지 컴포넌트](https://github.com/j-h-711/ICT_elice/assets/106228604/f32ca5f7-bcef-4c73-aa07-65426506f41a)
+Header / SearchBar / FilterBar / CardList / Pagination / Footer<br/>
+재사용 가능한 단위로 구성된 컴포넌트들로 메인페이지 컴포넌트 구성<br/>
+필터링, 페이지네이션, GET요청 주요함수 위치
+
 <br/>
 <br/>
 - Pagination 컴포넌트
@@ -93,5 +95,6 @@
 <br/>
 <br/>
 - styled-components 사용
-  ![styled-components 사용](https://github.com/j-h-711/ICT_elice/assets/106228604/0154bfca-864a-4425-b68a-ade50357119e)
-  styled-components를 사용한 컴포넌트 기반 스타일링
+
+![styled-components 사용](https://github.com/j-h-711/ICT_elice/assets/106228604/0154bfca-864a-4425-b68a-ade50357119e)
+styled-components를 사용한 컴포넌트 기반 스타일링
