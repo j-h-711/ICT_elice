@@ -13,6 +13,10 @@
 ![홈](https://github.com/j-h-711/ICT_elice/assets/106228604/9fb83af4-dd43-48dc-a4a9-f053f455862a)
 ![페이지네이션, 푸터](https://github.com/j-h-711/ICT_elice/assets/106228604/19a58be8-bfea-4c43-b33c-8c4b6caf46d3)
 <br/>
+헤더의 전체강의 클릭시 기본 페이지로 이동
+<br/>
+푸터의 회사소개, 서비스 이용약관, 업데이트 소식 및 SNS 버튼 클릭시 새 창에서 페이지 띄움
+<br/>
 
 ## 기능 별 상세 화면
 
@@ -36,7 +40,11 @@
   ![무료, 자바](https://github.com/j-h-711/ICT_elice/assets/106228604/99fb65c6-b853-45c1-b59f-31d339b652f6)
   < 결과 없을 때 >
   ![검색어 '첫' + 유료 결과](https://github.com/j-h-711/ICT_elice/assets/106228604/0f482bc1-7164-44ea-ad83-c076ede652ca)
+
   <br/>
+  <br/>
+  - 검색창 포커싱
+  ![검색창 포커싱](https://github.com/j-h-711/ICT_elice/assets/106228604/b0193efa-8554-4169-bd83-0cd2f9f0f5fc)
 
 ## 주요 코드
 
