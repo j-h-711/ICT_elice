@@ -11,27 +11,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ filter, page }) => {
   const navigate = useNavigate();
   const [search, setSearch] = useState<string>("");
   const [focused, setFocused] = useState<boolean>(false);
-
   // 검색창에 포커스
   const handleFocus = () => {
     setFocused(true);
   };
-
   // 검색창에서 포커스 아웃
   const handleBlur = () => {
     setFocused(false);
   };
-
   // handleEnter에서 사용할 url 페이지 이동 함수
   const handleKeyword = (search: string) => {
-    navigate(`?price=${filter[0]}&keyword=${search}&page=${1}`);
+    navigate(`?price=${filter.join(",")}&keyword=${search}&page=${1}`);
   };
-
   // 검색어 onChange
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-
   // 검색 Enter
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {

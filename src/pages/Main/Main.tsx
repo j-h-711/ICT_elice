@@ -36,12 +36,10 @@ const Main = () => {
   const keyword: string =
     new URLSearchParams(location.search).get("keyword") || "";
 
-  // 현재페이지 state
-  const [currentPage, setCurrentPage] = useState<number>(1);
   // 무료,유료,전체 필터링 state
   const [filter, setFilter] = useState<string[]>([]);
 
-  // 옵션 아이템 클릭 이벤트 핸들러
+  // 옵션 아이템 클릭 함수
   const handleOptionClick = (option: string) => {
     if (filter.includes(option)) {
       setFilter(filter.filter((item) => item !== option));
@@ -85,37 +83,22 @@ const Main = () => {
     const fetchCards = async () => {
       try {
         let filterConditions = {};
-        if (filter[0] === "isfree" && filter.length === 1) {
-          filterConditions = {
-            $and: [
-              { title: keyword !== "" ? `%${keyword}%` : "%%" },
-              {
-                $or: [{ enroll_type: 0, is_free: true }],
-              },
-            ],
-          };
-        } else if (filter[0] === "paid" && filter.length === 1) {
-          filterConditions = {
-            $and: [
-              { title: keyword !== "" ? `%${keyword}%` : "%%" },
-              {
-                $or: [{ enroll_type: 0, is_free: false }],
-              },
-            ],
-          };
-        } else {
-          filterConditions = {
-            $and: [
-              { title: keyword !== "" ? `%${keyword}%` : "%%" },
-              {
+        let titleCondition = { title: keyword !== "" ? `%${keyword}%` : "%%" };
+        let freeCondition =
+          filter[0] === "isfree" && filter.length === 1
+            ? { $or: [{ enroll_type: 0, is_free: true }] }
+            : filter[0] === "paid" && filter.length === 1
+            ? { $or: [{ enroll_type: 0, is_free: false }] }
+            : {
                 $or: [
                   { enroll_type: 0, is_free: true },
                   { enroll_type: 0, is_free: false },
                 ],
-              },
-            ],
-          };
-        }
+              };
+
+        filterConditions = {
+          $and: [titleCondition, freeCondition],
+        };
 
         // offset으로 페이지 단위 설정
         // offset = 0 이 1페이지
@@ -131,7 +114,6 @@ const Main = () => {
 
         // Params가 붙여진 get 요청 url
         const url = `${baseUrl}?${queryParams.toString()}`;
-
         const response = await axios.get(url);
         const data = response.data;
         setCards(data.courses);
@@ -140,7 +122,6 @@ const Main = () => {
         console.error("API 요청 에러:", error);
       }
     };
-
     fetchCards();
   }, [page, filter, keyword]);
 

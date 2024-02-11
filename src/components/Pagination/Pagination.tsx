@@ -18,7 +18,6 @@ const CommunityPagination: React.FC<CommunityPaginationProps> = ({
   goToPage,
 }) => {
   const [pages, setPages] = useState<number[]>([]);
-
   const visiblePages: number = 5; // 한 번에 표시되는 페이지 수
   const halfVisible: number = Math.floor(visiblePages / 2);
 
@@ -47,7 +46,6 @@ const CommunityPagination: React.FC<CommunityPaginationProps> = ({
       >
         {"<"}
       </PageMoveButton>
-
       {pages.map((targetPage) => (
         <PageButton
           key={targetPage}
