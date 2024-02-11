@@ -21,6 +21,7 @@
   ![마지막 페이지](https://github.com/j-h-711/ICT_elice/assets/106228604/41e322fe-ff6c-4669-8f8a-6c21f5049fa4)
 
 - 검색 / 유료,무료 필터링
+  <br/>
   < '첫' 단어 검색 >
   !['첫' 검색어 필터링](https://github.com/j-h-711/ICT_elice/assets/106228604/27525f27-1eac-435c-af3a-ba0d4dc3aa8b)
   < 유료 + 무료 + '자바' >
@@ -36,7 +37,7 @@
 
 - api 서버 통신
   AXIOS 라이브러리 활용 async/await 비동기 통신
-  ![api 통신](https://github.com/j-h-711/ICT_elice/assets/106228604/09412a61-b830-4ed0-b21e-85b3015b5717)
+  ![api 통신](https://github.com/j-h-711/ICT_elice/assets/106228604/09412a61-b830-4ed0-b21e-85b3015b5717) <br/>
   GET 요청 endpoint에 Params로 filter_conditions를 담아 요청
   응답으로 받은 데이터로 전체 강의와 전체 강의 수를 상태 변수로 관리
   try/catch로 에러처리 console 출력
@@ -50,9 +51,9 @@
 - Pagination 컴포넌트
 
 1. 컴포넌트 구성
-   ![페이지네이션](https://github.com/j-h-711/ICT_elice/assets/106228604/01c51687-4ba0-4848-92cb-3b143f1b3b09)
+   ![페이지네이션](https://github.com/j-h-711/ICT_elice/assets/106228604/01c51687-4ba0-4848-92cb-3b143f1b3b09) <br/>
 2. 사용 함수
-   ![페이지네이션 사용 함수](https://github.com/j-h-711/ICT_elice/assets/106228604/adb8d029-7072-4cf6-8411-b8d7b6192da7)
+   ![페이지네이션 사용 함수](https://github.com/j-h-711/ICT_elice/assets/106228604/adb8d029-7072-4cf6-8411-b8d7b6192da7) <br/>
    라이브러리 사용 없이 페이지네이션 처리
    현재 페이지, 총 페이지수, 다음페이지 이동 함수, 전 페이지 이동 함수, 해당 페이지로 이동 함수
    부모로부터 props로 받아와 사용
@@ -61,12 +62,14 @@
 - 페이지, 키워드 필터, 무료/유료 필터 적용
 
 1. 페이지, 필터링
+   <br/>
    ![페이지, 필터, 키워드 조작](https://github.com/j-h-711/ICT_elice/assets/106228604/89cd0d4f-1f69-45dc-84ec-91b546ac59b9)
    현재페이지와 키워드는 URL Params을 사용
    유료 / 무료 / 유료+무료 필터링은 조건이 변경될 때 문자열로 구성된 배열 형태로 관리
    검색어나 무료/유료 필터가 변경되면 결과의 1페이지로 이동
 
 2. 검색어 필터링 조작
+   <br/>
    ![검색어 필터링](https://github.com/j-h-711/ICT_elice/assets/106228604/3e640f42-ce8b-4e62-8824-4b1ba502ce7b)
    검색어를 입력받아 URL Params로 담아 이동
 
